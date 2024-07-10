@@ -12,7 +12,8 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        //
+        $product = Producto::all(); //Traer toda la informacion de la tabla producto
+        return view('productos.index', compact('product'));
     }
 
     /**
@@ -33,7 +34,11 @@ class ProductoController extends Controller
         $product->precio = $request->input("precio");
         $product->cantidad = $request->input("cantidad");
         $product->descripcion = $request->input("descripcion");
+        if($request->hasfile('imagen')){
+            $product->imagen = $request->file('imagen')->store('public/cursos');
+        }
         $product->save();
+
         return "Guardado con exito";
     }
 
@@ -42,7 +47,9 @@ class ProductoController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $product = Producto::find($id);
+        return view('productos.show', compact('product'));
+
     }
 
     /**
