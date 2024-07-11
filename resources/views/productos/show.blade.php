@@ -15,8 +15,8 @@
 
     </div>
     <br>
-    <a href="/cursos/{{$product->id}}/edit" class="btn btn-warning">Editar curso</a>
-    {{-- <a href="/cursos/{{$pedido->id}}/edit" class="btn btn-dark">Editar curso</a> --}}
+    <a href="/cursos/{{$product->id}}/edit" class="btn btn-warning">Editar pedido</a>
+    {{-- <a href="/cursos/{{$pedido->id}}/edit" class="btn btn-dark">Editar pedido</a> --}}
 </div>
 
 @endsection
