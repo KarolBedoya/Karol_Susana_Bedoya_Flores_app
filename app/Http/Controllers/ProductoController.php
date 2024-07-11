@@ -35,7 +35,7 @@ class ProductoController extends Controller
         $product->cantidad = $request->input("cantidad");
         $product->descripcion = $request->input("descripcion");
         if($request->hasfile('imagen')){
-            $product->imagen = $request->file('imagen')->store('public/cursos');
+            $product->imagen = $request->file('imagen')->store('public/productos');
         }
         $product->save();
 
